@@ -1,14 +1,23 @@
 <?php
-   include("/srv/studioare.com/public_html/mc/mcservercheck-sm.php");
-   $online = "http://i.stdior.com/sa/bnr/minecraftonlinev003c.png";
-   $offline = "http://i.stdior.com/sa/bnr/minecraftofflinev003c.png";
-   
-   header('content-type: image/png');
-   header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
-   
-   if($resulted=="Online"){
-      echo file_get_contents($online);
-   }else{
-      echo file_get_contents($offline);   
-   }
+/**
+ * Shows image based on server online status
+ * Originates from studioare.net
+ * Used between July 2011 - January 2014
+ * 
+ * Web archine July 2011
+ * https://web.archive.org/web/20110709205619/http://studioare.net:80/
+ */
+include("mcservercheck-sm.php");
+// Locally hosted images, use your own
+$online = "online.png";
+$offline = "offline.png";
+
+header('content-type: image/png');
+header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+
+if($resulted=="Online"){
+   echo file_get_contents($online);
+}else{
+   echo file_get_contents($offline);
+}
 ?>

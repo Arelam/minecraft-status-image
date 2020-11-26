@@ -7,7 +7,7 @@
  * Web archine July 2011
  * https://web.archive.org/web/20110709205619/http://studioare.net:80/
  */
-include("mcservercheck-sm.php");
+include("server-check.php");
 // Locally hosted images, use your own
 $online = "online.png";
 $offline = "offline.png";
